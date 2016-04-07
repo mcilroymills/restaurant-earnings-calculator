@@ -1,16 +1,16 @@
 app.config(function($routeProvider, $locationProvider) {
   $routeProvider
     .when('/details', {
-      templateUrl: 'index.html',
-      controller: 'CartCtrl'
+      templateUrl: '../partials/details.html',
+      controller: 'detailsCtrl'
     })
     .when('/charges', {
-      templateUrl: 'index.html',
-      controller: 'CartCtrl'
+      templateUrl: '../partials/charges.html',
+      controller: 'chargesCtrl'
     })
     .when('/earnings', {
-      templateUrl: 'index.html',
-      controller: 'Ctrl'
+      templateUrl: '../partials/earnings.html',
+      controller: 'earningsCtrl'
     })
     .otherwise('/details');
 });

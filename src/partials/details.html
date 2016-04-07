@@ -1,0 +1,19 @@
+<div ng-controller="detailsCtrl">
+  <h2>Enter details for Meal {{ numberOfMeals + 1 }}:</h2>
+  <form ng-submit="formSubmit()">
+    <fieldset class="form-group">
+      <label for="baseMealPrice">Base Meal Price: $</label>
+      <input type="number" ng-model="meal.baseMealPrice" class="form-control" id="baseMealPrice" placeholder="0.00">
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="taxRate">Tax Rate: %</label>
+      <input type="number" ng-model="meal.taxRate" class="form-control" id="taxRate" placeholder="0.00">
+    </fieldset>
+    <fieldset class="form-group">
+      <label for="tipPercentage">Tip Percentage: %</label>
+      <input type="number" ng-model="meal.tipPercentage" class="form-control" id="tipPercentage" placeholder="0.00">
+    </fieldset>
+    <button type="submit" class="btn btn-primary">Add Meal</button>
+    <button type="button" class="btn btn-secondary">Cancel</button>
+  </form>
+</div>
