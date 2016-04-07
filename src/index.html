@@ -13,13 +13,18 @@
       <header>
         <h1>Earnings Calculator</h1>
         <ul>
-          <a href=""><li>Meal Details</li></a>
-          <a href=""><li>Charge Overview</li></a>
-          <a href=""><li>Earnings Info</li></a>
+          <a href="/#/details"><li>Meal Details</li></a>
+          <a href="/#/charges"><li>Charge Overview</li></a>
+          <a href="/#/earnings"><li>Earnings Info</li></a>
         </ul>
       </header>
-      <!-- sample angular code -->
+      <!--angular code -->
       <div ng-view></div>
+      <footer>
+        <br>
+        <br>
+        <a href="/#/details"><button ng-click="reset()" ng-controller="resetCtrl" type="button" class="btn btn-danger">Reset All</button></a>
+      </footer>
     </div>
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 

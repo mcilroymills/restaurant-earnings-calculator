@@ -1,5 +1,8 @@
-<div ng-controller="detailsCtrl">
-  <h2>Overview for for Meal {{}}:</h2>
-  <button type="button" class="btn btn-primary">Add Meal</button>
-  <button type="button" class="btn btn-secondary">Cancel</button>
+<div ng-controller="chargesCtrl">
+  <h2>Overview for for Meal {{ mealIndex + 1}}:</h2>
+  <button type="button" ng-click="previousMeal()" class="btn btn-secondary">Previous Meal</button>
+  <button type="button" ng-click="nextMeal()" class="btn btn-secondary">Next Meal</button>
+  <h4>Subtotal: {{ meal.baseMealPrice + (meal.baseMealPrice * (meal.taxRate / 100)) | currency }}</h4>
+  <h4>Tip: {{ (meal.baseMealPrice + (meal.baseMealPrice * (meal.taxRate / 100))) * (meal.tipPercentage / 100) | currency }}</h4>
+  <h4>Total: {{ meal.baseMealPrice + (meal.baseMealPrice * (meal.taxRate / 100)) + (meal.baseMealPrice + (meal.baseMealPrice * (meal.taxRate / 100))) * (meal.tipPercentage / 100) | currency }}</h4>
 </div>

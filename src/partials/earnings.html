@@ -1,5 +1,5 @@
-<div class="container">
-  <div ng-controller="earningsCtrl">
-      <p>{{ greeting }}</p>
-  </div>
+<div ng-controller="earningsCtrl">
+  <h4>Tip Total: {{ serviceData.tipTotal | currency}}</h4>
+  <h4>Meal Count: {{ serviceData.mealCount }}</h4>
+  <h4>Average Tip Per Meal: {{ serviceData.averageTip | currency}} </h4>
 </div>

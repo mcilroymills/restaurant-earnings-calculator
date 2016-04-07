@@ -8,26 +8,33 @@ app.controller('detailsCtrl', ['$scope', "mealDataService", function($scope, mea
   };
 }]);
 
-app.controller('chargesCtrl', ['$scope', 'mealDataService', function($scope, mealDataService) {
+app.controller('chargesCtrl', ['$scope', "mealDataService", function($scope, mealDataService) {
 
   //Start with first meal
   $scope.mealIndex = 0;
-  $scope.meal = mealDataService.getMeals[mealIndex];
+  $scope.meal = mealDataService.getMeals()[$scope.mealIndex];
 
   $scope.nextMeal = function () {
-    mealIndex++;
+    if ($scope.mealIndex < mealDataService.getMeals().length -1) {
+      $scope.mealIndex++;
+      $scope.meal = mealDataService.getMeals()[$scope.mealIndex];
+    }
   };
   $scope.previousMeal = function () {
-    mealIndex--;
+    if ($scope.mealIndex > 0) {
+      $scope.mealIndex--;
+      $scope.meal = mealDataService.getMeals()[$scope.mealIndex];
+    }
   };
-
-
 }]);
 
-app.controller('earningsCtrl', ['$scope', function($scope) {
-  $scope.greeting = "Hello World!";
+app.controller('earningsCtrl', ['$scope', "mealDataService", function($scope, mealDataService) {
+  $scope.serviceData = mealDataService.getCumulativeTotals();
 }]);
 
-app.controller('resetCtrl', ['$scope', function($scope) {
-  $scope.greeting = "Hello World!";
+app.controller('resetCtrl', ['$scope', "mealDataService", function($scope, mealDataService) {
+  $scope.reset = function () {
+    console.log("here");
+    mealDataService.resetAll();
+  };
 }]);
